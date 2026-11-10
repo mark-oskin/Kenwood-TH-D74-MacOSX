@@ -39,17 +39,9 @@ Download `TH-D74-Programmer.zip` from the
 [Releases](https://github.com/mark-oskin/Kenwood-TH-D74-MacOSX/releases) page
 and unzip it. It needs macOS 14 or later and runs on Apple silicon and Intel.
 
-The app is not notarized by Apple, so macOS will refuse to open it the first
-time. Either right-click the app and choose **Open**, then confirm (on recent
-macOS versions: try to open it once, then allow it under **System Settings >
-Privacy & Security**), or remove the quarantine flag yourself:
-
-```
-xattr -dr com.apple.quarantine "TH-D74 Programmer.app"
-```
-
-If you would rather not run a binary from the internet, build it from source
-(below); it takes a minute.
+The app is signed with a Developer ID and notarized by Apple, so it opens
+like any other downloaded app. If you would rather not run a binary from the
+internet, build it from source (below); it takes a minute.
 
 ## Connecting the radio
 
@@ -124,8 +116,12 @@ Requires Xcode 16 or later (Swift 6).
 
 ```
 swift test                 # run the unit tests
-./Scripts/make-app.sh      # builds build/TH-D74 Programmer.app
+./Scripts/make-app.sh      # builds build/TH-D74 Programmer.app (ad-hoc signed)
 ```
+
+`Scripts/release.sh <team-id> <notary-profile>` produces the signed, notarized
+zip that goes on the Releases page. It needs an Apple developer account; see
+the comments at the top of the script.
 
 The project is a Swift package:
 

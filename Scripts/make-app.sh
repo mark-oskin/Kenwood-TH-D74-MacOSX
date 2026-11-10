@@ -20,7 +20,7 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
 <dict>
     <key>CFBundleName</key><string>TH-D74 Programmer</string>
     <key>CFBundleDisplayName</key><string>TH-D74 Programmer</string>
-    <key>CFBundleIdentifier</key><string>local.thd74.programmer</string>
+    <key>CFBundleIdentifier</key><string>io.github.mark-oskin.THD74Programmer</string>
     <key>CFBundleExecutable</key><string>THD74App</string>
     <key>CFBundlePackageType</key><string>APPL</string>
     <key>CFBundleShortVersionString</key><string>0.1</string>
